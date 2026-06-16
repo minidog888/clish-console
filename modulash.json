@@ -1,0 +1,9 @@
+{
+  "name": "clish/console",
+  "version": "1.0.0",
+  "description": "Clish Console Framework",
+  "type": "module",
+  "aliases": {
+    "@clish/console": "src/"
+  }
+}
