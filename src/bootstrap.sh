@@ -5,12 +5,12 @@
 
 # Public function to check if running in packaged mode
 clish_console_is_packaged() {
-    [[ "${CLISH_CONSOLE_PACKAGED:-false}" == "true" ]]
+    [[ "${MODULASH_PACKAGED:-false}" == "true" ]]
 }
 
 # If not set, default to false (development mode)
-export CLISH_CONSOLE_PACKAGED="${CLISH_CONSOLE_PACKAGED:-false}"
-export CLISH_CONSOLE_WORK_DIR="${CLISH_CONSOLE_WORK_DIR:-$PWD}"
+export CLISH_CONSOLE_PACKAGED="${MODULASH_PACKAGED:-false}"
+export CLISH_CONSOLE_WORK_DIR="${MODULASH_WORK_DIR:-$PWD}"
 
 import "@clish/console/core/init.sh"
 import "@clish/console/core/log.sh"
