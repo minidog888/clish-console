@@ -9,10 +9,10 @@ _GREEN="\033[32m"
 _RESET="\033[0m"
 
 clish_console_console_help_get_version() {
-    if [[ -f "$CLISH_CONSOLE_WORK_DIR/modulash.json" ]]; then
-        jq -r '.version // "1.0.0"' "$CLISH_CONSOLE_WORK_DIR/modulash.json" 2>/dev/null || echo "1.0.0"
-    else
+    if [[ -n "$MODULASH_PROJECT_VERSION" && "$MODULASH_PROJECT_VERSION" != "unknown" ]]; then
         echo "$MODULASH_PROJECT_VERSION"
+    else
+        jq -r '.version // "1.0.0"' "$CLISH_CONSOLE_WORK_DIR/modulash.json" 2>/dev/null || echo "1.0.0"
     fi
 }
 
